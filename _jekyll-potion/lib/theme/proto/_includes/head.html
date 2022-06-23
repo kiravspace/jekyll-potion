@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-cache" >
+<meta http-equiv="Pragma" content="no-cache">
+{% if page.created-date %}
+<meta name="Date" content="{{ page.created-date }}">
+{% endif %}
+
+{% if page.last-modified-date %}
+<meta http-equiv="Last-Modified" content="{{ page.last-modified-date }}">
+{% endif %}
+
+{% assign title = site.data.potion.site_title %}
+
+{% if page.title %}
+{% assign title = title | prepend: " - " | prepend: page.title %}
+{% endif %}
+<meta http-equiv="Title" content="{{ title | escape }}">
+
+{% if page.description %}
+<meta http-equiv="Description" content="{{ page.description }}">
+{% endif %}
+
+{% if site.url %}
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title | escape }}">
+{% if page.description %}
+<meta property="og:description" content="{{ page.description }}">
+{% endif %}
+{% if site.data.potion.site_icon %}
+<meta property="og:image" content="{{ site.url }}{{ site.data.potion.site_icon }}">
+{% endif %}
+{% endif %}
+
+<meta property="search-indexes-location" content="{{ site.data.potion.target_assets }}/data/search.json">
+
+<title>{{ title | escape }}</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link rel="stylesheet" href="{{ site.data.potion.target_assets }}/css/main.css">
+<link rel="stylesheet" href="{{ site.data.potion.target_assets }}/css/syntax.css">
+
+<script type="text/javascript" src="{{ site.data.potion.target_assets }}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="{{ site.data.potion.target_assets }}/js/jsrender.min.js"></script>
+<script type="text/javascript" src="{{ site.data.potion.target_assets }}/js/main.js"></script>
+
+{% if site.data.potion.favicon_path %}
+{% include {{ site.data.potion.favicon_path }} %}
+{% endif %}

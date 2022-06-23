@@ -1,0 +1,5 @@
+url: "https://kiravspace.github.io"
+baseurl: "/jekyll-potion"
+
+exclude:
+  - "CNAME"

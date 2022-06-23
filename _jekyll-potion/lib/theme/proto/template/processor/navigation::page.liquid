@@ -1,0 +1,14 @@
+<li>
+    <div class="nav_link fold {% if has_child? %} has_child {% endif %}">
+        <a href="{{ url }}" class="nav_href">{{ page.title }}</a>
+        <span class="nav_unfold"> </span>
+        <span class="nav_fold"> </span>
+    </div>
+    {% if has_child? %}
+        <ul class="nav_menu">
+            {% for potion in children %}
+                {{ potion.render_for_navigation }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

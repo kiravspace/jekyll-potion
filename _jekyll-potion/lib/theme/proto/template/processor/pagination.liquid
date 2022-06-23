@@ -1,0 +1,24 @@
+<div class="pagination_block">
+    {% if has_before? %}
+        <a href="{{ before.url }}">
+            <div class="block left">
+                <div class="block_thumb prev"></div>
+                <div class="block_content">
+                    <div class="block_title">{{ before.page.title }}</div>
+                    <div class="block_description">{{ before.page.description }}</div>
+                </div>
+            </div>
+        </a>
+    {% endif %}
+    {% if has_after? %}
+        <a href="{{ after.url }}">
+            <div class="block right">
+                <div class="block_content">
+                    <div class="block_title">{{ after.page.title }}</div>
+                    <div class="block_description">{{ after.page.description }}</div>
+                </div>
+                <div class="block_thumb next"></div>
+            </div>
+        </a>
+    {% endif %}
+</div>

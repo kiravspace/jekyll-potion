@@ -1,0 +1,56 @@
+url: "https://jekyll-potion.kirav.net"
+base_url: ""
+
+includes_dir: ""
+
+exclude:
+  - "*.iml"
+  - ".idea/"
+  - "_jekyll-potion"
+
+collections:
+  posts:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      permalink: /:path/:basename
+  - scope:
+      path: "README.md"
+    values:
+      permalink: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+sass:
+  sass_dir: ""
+  style: compressed
+
+########################################
+plugins:
+  - jekyll-spaceship
+
+jekyll-spaceship:
+  processors:
+    - table-processor
+    - media-processor
+    - mathjax-processor
+    - polyfill-processor
+  mathjax-processor:
+    config:
+      options:
+        enableMenu: false
+
+########################################
+
+jekyll-potion:
+  title: Jekyll-Potion
