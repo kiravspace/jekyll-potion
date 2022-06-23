@@ -26,4 +26,5 @@ jobs:
       with:
         keep_history: true
         target_branch: "gh-pages"
+        jekyll_build_options: "--config _config.yml,_config.staging.yml --trace"
         token: ${{ secrets.JEKYLL_PAT }}

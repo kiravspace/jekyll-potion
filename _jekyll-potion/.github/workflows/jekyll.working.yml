@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +26,5 @@ jobs:
       with:
         keep_history: true
         target_branch: "gh-pages"
-        jekyll_build_options: "--config _config.yml,_config.working.yml --trace"
+        jekyll_build_options: "--config _config.yml,_config.staging.yml --trace"
         token: ${{ secrets.JEKYLL_PAT }}
